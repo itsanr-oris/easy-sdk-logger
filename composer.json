@@ -1,0 +1,37 @@
+{
+    "name": "f-oris/easy-sdk-logger",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "F.oris",
+            "email": "oris@itsanr.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "pimple/pimple": "^3.3",
+        "f-oris/easy-logger": "^1.0"
+    },
+    "require-dev": {
+        "f-oris/easy-sdk-framework": "1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Foris\\Easy\\Sdk\\Logger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Foris\\Easy\\Sdk\\Logger\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "easy-sdk": {
+            "providers": [
+                "Foris\\Easy\\Sdk\\Logger\\ServiceProvider"
+            ]
+        }
+    }
+}
