@@ -20,7 +20,7 @@ php artisan vendor:publish --provider="Foris\Easy\Sdk\Logger\ServiceProvider"
 
 ## 使用
 
-通过服务容器，获取Logger实例，按照Logger使用说明进行调用即可
+通过服务容器，获取Logger实例，按照[easy-logger](https://github.com/itsanr-oris/easy-logger)使用说明进行调用即可
 
 ```php
 <?php
