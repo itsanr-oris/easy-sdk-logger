@@ -16,7 +16,7 @@ class GetLoggerInstanceTest extends TestCase
     /**
      * Set up test environment.
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
         $this->app()->registerProviders([ServiceProvider::class]);
