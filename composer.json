@@ -11,10 +11,10 @@
     ],
     "require": {
         "php": ">=5.5",
-        "f-oris/easy-logger": "^0.5"
+        "f-oris/easy-logger": "^2.0"
     },
     "require-dev": {
-        "f-oris/easy-sdk-develop": "^0.5"
+        "f-oris/easy-sdk-develop": "^2.0"
     },
     "autoload": {
         "psr-4": {

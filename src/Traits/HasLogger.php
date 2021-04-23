@@ -5,6 +5,7 @@ namespace Foris\Easy\Sdk\Logger\Traits;
 use Foris\Easy\Logger\Driver\Factory;
 use Foris\Easy\Logger\Logger;
 use Foris\Easy\Sdk\ServiceContainer;
+use Psr\Log\LoggerInterface;
 
 /**
  * Trait HasLogger
@@ -21,8 +22,8 @@ trait HasLogger
     {
         if (method_exists($this, 'app')) {
             $app = $this->app();
-            if (!empty($app) && $app instanceof ServiceContainer && isset($app['logger'])) {
-                return $app['logger'];
+            if (!empty($app) && $app instanceof ServiceContainer && $app->has(LoggerInterface::class)) {
+                return $app->get(LoggerInterface::class);
             }
         }
 
