@@ -7,6 +7,7 @@ use Foris\Easy\Sdk\Develop\TestCase;
 use Foris\Easy\Sdk\Logger\ServiceProvider;
 use Foris\Easy\Sdk\Logger\Tests\Component\NonSdkComponent;
 use Foris\Easy\Sdk\Logger\Tests\Component\SdkComponent;
+use Psr\Log\LoggerInterface;
 
 /**
  * Class GetLoggerInstanceTest
@@ -14,12 +15,13 @@ use Foris\Easy\Sdk\Logger\Tests\Component\SdkComponent;
 class GetLoggerInstanceTest extends TestCase
 {
     /**
-     * Set up test environment.
+     * Gets the service providers array.
+     *
+     * @return array
      */
-    protected function setUp()
+    protected function providers()
     {
-        parent::setUp();
-        $this->app()->registerProviders([ServiceProvider::class]);
+        return [ServiceProvider::class];
     }
 
     /**
@@ -27,7 +29,7 @@ class GetLoggerInstanceTest extends TestCase
      */
     public function testGetLoggerInstance()
     {
-        $this->assertInstanceOf(Logger::class, $this->app()->get('logger'));
+        $this->assertInstanceOf(Logger::class, $this->app()->get(LoggerInterface::class));
     }
 
     /**
